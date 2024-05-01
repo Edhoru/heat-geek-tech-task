@@ -32,8 +32,8 @@ final class NetworkManager {
                 
                 do {
                     let decoder = JSONDecoder()
-                    let decodedData = try decoder.decode(CharacterList.self, from: jsonData)
-                    completion(.success(decodedData.characters))
+                    let decodedData = try decoder.decode(ResponseWrapper.self, from: jsonData)
+                    completion(.success(decodedData.data))
                 } catch {
                     print("Decoding error: \(error)")
                     completion(.failure(.decodingProblem))

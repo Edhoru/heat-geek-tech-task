@@ -10,18 +10,23 @@ import SwiftUI
 struct CharacterListView: View {
     
     @State private var characters = [Character]()
+    @State private var selectedCharacter: Character?
     
     var body: some View {
-        VStack {
+        NavigationView {
             List(characters, id: \.self) { character in
-                Text(character.name)
+                NavigationLink(destination: CharacterDetailView(character: character)) {
+                    Text(character.name)
+                }
             }
+            .navigationTitle("Characters")
         }
         .padding()
         .onAppear {
             fetchCharacters()
         }
     }
+    
     
     func fetchCharacters() {
         NetworkManager.shared.fetchCharacters { result in

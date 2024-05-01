@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct CharacterList: Codable {
-    let characters: [Character]
+struct ResponseWrapper: Codable {
+    let data: [Character]
 }
 
 struct Character: Codable, Hashable {
