@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		51CB799F2BE25CC900BE0B36 /* Heat_Geek_Tech_TaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB799E2BE25CC900BE0B36 /* Heat_Geek_Tech_TaskApp.swift */; };
-		51CB79A12BE25CC900BE0B36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB79A02BE25CC900BE0B36 /* ContentView.swift */; };
+		51CB79A12BE25CC900BE0B36 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB79A02BE25CC900BE0B36 /* CharacterListView.swift */; };
 		51CB79A32BE25CCB00BE0B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51CB79A22BE25CCB00BE0B36 /* Assets.xcassets */; };
 		51CB79A62BE25CCB00BE0B36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51CB79A52BE25CCB00BE0B36 /* Preview Assets.xcassets */; };
 		51CB79B02BE25CCB00BE0B36 /* Heat_Geek_Tech_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB79AF2BE25CCB00BE0B36 /* Heat_Geek_Tech_TaskTests.swift */; };
-		51CB79BA2BE25CCB00BE0B36 /* Heat_Geek_Tech_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB79B92BE25CCB00BE0B36 /* Heat_Geek_Tech_TaskUITests.swift */; };
-		51CB79BC2BE25CCB00BE0B36 /* Heat_Geek_Tech_TaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB79BB2BE25CCB00BE0B36 /* Heat_Geek_Tech_TaskUITestsLaunchTests.swift */; };
+		51D8AF312BE2602A0053FBFF /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8AF302BE2602A0053FBFF /* Character.swift */; };
+		51D8AF332BE260710053FBFF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8AF322BE260710053FBFF /* NetworkManager.swift */; };
+		51D8AF352BE260E20053FBFF /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8AF342BE260E20053FBFF /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +37,15 @@
 /* Begin PBXFileReference section */
 		51CB799B2BE25CC900BE0B36 /* Heat Geek Tech Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heat Geek Tech Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CB799E2BE25CC900BE0B36 /* Heat_Geek_Tech_TaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heat_Geek_Tech_TaskApp.swift; sourceTree = "<group>"; };
-		51CB79A02BE25CC900BE0B36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		51CB79A02BE25CC900BE0B36 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		51CB79A22BE25CCB00BE0B36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51CB79A52BE25CCB00BE0B36 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51CB79AB2BE25CCB00BE0B36 /* Heat Geek Tech TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Heat Geek Tech TaskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CB79AF2BE25CCB00BE0B36 /* Heat_Geek_Tech_TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heat_Geek_Tech_TaskTests.swift; sourceTree = "<group>"; };
 		51CB79B52BE25CCB00BE0B36 /* Heat Geek Tech TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Heat Geek Tech TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		51CB79B92BE25CCB00BE0B36 /* Heat_Geek_Tech_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heat_Geek_Tech_TaskUITests.swift; sourceTree = "<group>"; };
-		51CB79BB2BE25CCB00BE0B36 /* Heat_Geek_Tech_TaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heat_Geek_Tech_TaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		51D8AF302BE2602A0053FBFF /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		51D8AF322BE260710053FBFF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		51D8AF342BE260E20053FBFF /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,6 @@
 			children = (
 				51CB799D2BE25CC900BE0B36 /* Heat Geek Tech Task */,
 				51CB79AE2BE25CCB00BE0B36 /* Heat Geek Tech TaskTests */,
-				51CB79B82BE25CCB00BE0B36 /* Heat Geek Tech TaskUITests */,
 				51CB799C2BE25CC900BE0B36 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,8 +95,10 @@
 		51CB799D2BE25CC900BE0B36 /* Heat Geek Tech Task */ = {
 			isa = PBXGroup;
 			children = (
+				51D8AF372BE261210053FBFF /* Model */,
+				51D8AF362BE261130053FBFF /* Networking */,
 				51CB799E2BE25CC900BE0B36 /* Heat_Geek_Tech_TaskApp.swift */,
-				51CB79A02BE25CC900BE0B36 /* ContentView.swift */,
+				51CB79A02BE25CC900BE0B36 /* CharacterListView.swift */,
 				51CB79A22BE25CCB00BE0B36 /* Assets.xcassets */,
 				51CB79A42BE25CCB00BE0B36 /* Preview Content */,
 			);
@@ -118,13 +121,21 @@
 			path = "Heat Geek Tech TaskTests";
 			sourceTree = "<group>";
 		};
-		51CB79B82BE25CCB00BE0B36 /* Heat Geek Tech TaskUITests */ = {
+		51D8AF362BE261130053FBFF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				51CB79B92BE25CCB00BE0B36 /* Heat_Geek_Tech_TaskUITests.swift */,
-				51CB79BB2BE25CCB00BE0B36 /* Heat_Geek_Tech_TaskUITestsLaunchTests.swift */,
+				51D8AF322BE260710053FBFF /* NetworkManager.swift */,
+				51D8AF342BE260E20053FBFF /* APIError.swift */,
 			);
-			path = "Heat Geek Tech TaskUITests";
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		51D8AF372BE261210053FBFF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				51D8AF302BE2602A0053FBFF /* Character.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51CB79A12BE25CC900BE0B36 /* ContentView.swift in Sources */,
+				51D8AF332BE260710053FBFF /* NetworkManager.swift in Sources */,
+				51D8AF312BE2602A0053FBFF /* Character.swift in Sources */,
+				51CB79A12BE25CC900BE0B36 /* CharacterListView.swift in Sources */,
+				51D8AF352BE260E20053FBFF /* APIError.swift in Sources */,
 				51CB799F2BE25CC900BE0B36 /* Heat_Geek_Tech_TaskApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,8 +288,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51CB79BA2BE25CCB00BE0B36 /* Heat_Geek_Tech_TaskUITests.swift in Sources */,
-				51CB79BC2BE25CCB00BE0B36 /* Heat_Geek_Tech_TaskUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
