@@ -10,19 +10,30 @@ import SwiftUI
 struct CharacterListView: View {
     
     @StateObject var viewModel = AppetizerListViewModel()
+    @State private var isShowingDetail = false
+    @State private var selectedCharacter: Character?
     
     var body: some View {
         ZStack {
             NavigationView {
                 List(viewModel.characters, id: \.self) { character in
-                    NavigationLink(destination: CharacterDetailView(character: character)) {
-                        Text(character.name)
-                    }
+                    HGListCell(character: character)
+                        .onTapGesture {
+                            selectedCharacter = character
+                            isShowingDetail = true
+                        }
                 }
                 .navigationTitle("Characters")
+                .disabled( isShowingDetail)
             }
             .onAppear {
                 viewModel.fetchCharacters()
+            }
+            .blur(radius: isShowingDetail ? 20 : 0)
+            
+            if isShowingDetail {
+                CharacterDetailView(character: selectedCharacter!, 
+                                    isShowingDetail: $isShowingDetail)
             }
             
             if viewModel.isLoading {
