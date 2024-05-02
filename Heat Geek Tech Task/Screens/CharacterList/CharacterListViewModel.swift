@@ -12,6 +12,8 @@ final class AppetizerListViewModel: ObservableObject {
     @Published var characters: [Character] = []
     @Published var alertItem: AlertItem?
     @Published var isLoading = false
+    @Published var isShowingDetail = false
+    @Published var selectedCharacter: Character?
     
     func fetchCharacters() {
         isLoading = true
