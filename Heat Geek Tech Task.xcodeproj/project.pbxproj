@@ -21,6 +21,8 @@
 		51D8AF332BE260710053FBFF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8AF322BE260710053FBFF /* NetworkManager.swift */; };
 		51D8AF352BE260E20053FBFF /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8AF342BE260E20053FBFF /* APIError.swift */; };
 		51D8AF3C2BE26BD70053FBFF /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8AF3B2BE26BD70053FBFF /* CharacterDetailView.swift */; };
+		51E483AE2BE3A13000E91A9A /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E483AD2BE3A13000E91A9A /* XDismissButton.swift */; };
+		51E483B02BE3A1AD00E91A9A /* HGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E483AF2BE3A1AD00E91A9A /* HGButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		51D8AF322BE260710053FBFF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		51D8AF342BE260E20053FBFF /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		51D8AF3B2BE26BD70053FBFF /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		51E483AD2BE3A13000E91A9A /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
+		51E483AF2BE3A1AD00E91A9A /* HGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HGButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 		515341362BE38DD500BF7FC9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				51E483A82BE3A0D000E91A9A /* Buttons */,
 				5153413C2BE397CF00BF7FC9 /* Cell */,
 				5153413A2BE3925100BF7FC9 /* Image */,
 				515341392BE3923F00BF7FC9 /* UIKit Components */,
@@ -226,6 +231,15 @@
 				515341232BE3811900BF7FC9 /* CharacterDetail */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		51E483A82BE3A0D000E91A9A /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				51E483AD2BE3A13000E91A9A /* XDismissButton.swift */,
+				51E483AF2BE3A1AD00E91A9A /* HGButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,8 +373,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				51D8AF332BE260710053FBFF /* NetworkManager.swift in Sources */,
+				51E483AE2BE3A13000E91A9A /* XDismissButton.swift in Sources */,
 				51D8AF312BE2602A0053FBFF /* Character.swift in Sources */,
 				51CB79A12BE25CC900BE0B36 /* CharacterListView.swift in Sources */,
+				51E483B02BE3A1AD00E91A9A /* HGButton.swift in Sources */,
 				515341352BE38DC500BF7FC9 /* RemoteImage.swift in Sources */,
 				515341262BE3813600BF7FC9 /* CharacterListViewModel.swift in Sources */,
 				51D8AF3C2BE26BD70053FBFF /* CharacterDetailView.swift in Sources */,

@@ -26,7 +26,7 @@ struct CharacterDetailView: View {
             Button {
                 print("tapped")
             } label: {
-                Text("Button")
+                HGButton(title: "Add to favourites")
             }
             .padding(.bottom, 30)
         }
@@ -37,17 +37,7 @@ struct CharacterDetailView: View {
         .overlay(Button {
             isShowingDetail = false
         } label: {
-            ZStack {
-                Circle()
-                    .frame(width: 30, height: 30)
-                    .foregroundColor(.white)
-                    .opacity(0.6)
-                
-                Image(systemName: "xmark")
-                    .imageScale(.small)
-                    .frame(width: 44, height: 44)
-                    .foregroundStyle(.black)
-            }
+            XDismissButton()
         }, alignment: .topTrailing)
     }
 }
