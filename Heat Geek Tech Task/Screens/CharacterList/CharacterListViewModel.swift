@@ -11,10 +11,15 @@ final class AppetizerListViewModel: ObservableObject {
     
     @Published var characters: [Character] = []
     @Published var alertItem: AlertItem?
+    @Published var isLoading = false
     
     func fetchCharacters() {
+        isLoading = true
+        
         NetworkManager.shared.fetchCharacters { result in
             DispatchQueue.main.async {
+                self.isLoading = false
+                
                 switch result {
                 case .success(let characters):
                     self.characters = characters

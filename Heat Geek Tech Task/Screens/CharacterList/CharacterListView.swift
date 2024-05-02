@@ -12,17 +12,22 @@ struct CharacterListView: View {
     @StateObject var viewModel = AppetizerListViewModel()
     
     var body: some View {
-        NavigationView {
-            List(viewModel.characters, id: \.self) { character in
-                NavigationLink(destination: CharacterDetailView(character: character)) {
-                    Text(character.name)
+        ZStack {
+            NavigationView {
+                List(viewModel.characters, id: \.self) { character in
+                    NavigationLink(destination: CharacterDetailView(character: character)) {
+                        Text(character.name)
+                    }
                 }
+                .navigationTitle("Characters")
             }
-            .navigationTitle("Characters")
-        }
-        .padding()
-        .onAppear {
-            viewModel.fetchCharacters()
+            .onAppear {
+                viewModel.fetchCharacters()
+            }
+            
+            if viewModel.isLoading {
+                LoadingView()
+            }
         }
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: alertItem.title,

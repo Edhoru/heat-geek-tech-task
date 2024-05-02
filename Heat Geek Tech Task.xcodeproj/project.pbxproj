@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		515341262BE3813600BF7FC9 /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515341252BE3813600BF7FC9 /* CharacterListViewModel.swift */; };
 		515341312BE386A700BF7FC9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515341302BE386A700BF7FC9 /* Alert.swift */; };
+		515341332BE3890500BF7FC9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515341322BE3890500BF7FC9 /* LoadingView.swift */; };
 		51CB799F2BE25CC900BE0B36 /* Heat_Geek_Tech_TaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB799E2BE25CC900BE0B36 /* Heat_Geek_Tech_TaskApp.swift */; };
 		51CB79A12BE25CC900BE0B36 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB79A02BE25CC900BE0B36 /* CharacterListView.swift */; };
 		51CB79A32BE25CCB00BE0B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51CB79A22BE25CCB00BE0B36 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		515341252BE3813600BF7FC9 /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
 		515341302BE386A700BF7FC9 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		515341322BE3890500BF7FC9 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		51CB799B2BE25CC900BE0B36 /* Heat Geek Tech Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heat Geek Tech Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CB799E2BE25CC900BE0B36 /* Heat_Geek_Tech_TaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heat_Geek_Tech_TaskApp.swift; sourceTree = "<group>"; };
 		51CB79A02BE25CC900BE0B36 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				51D8AF482BE3809E0053FBFF /* Screens */,
 				51CB79A22BE25CCB00BE0B36 /* Assets.xcassets */,
 				51CB799E2BE25CC900BE0B36 /* Heat_Geek_Tech_TaskApp.swift */,
+				515341322BE3890500BF7FC9 /* LoadingView.swift */,
 				51CB79A42BE25CCB00BE0B36 /* Preview Content */,
 			);
 			path = "Heat Geek Tech Task";
@@ -333,6 +336,7 @@
 				51D8AF352BE260E20053FBFF /* APIError.swift in Sources */,
 				515341312BE386A700BF7FC9 /* Alert.swift in Sources */,
 				51CB799F2BE25CC900BE0B36 /* Heat_Geek_Tech_TaskApp.swift in Sources */,
+				515341332BE3890500BF7FC9 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
