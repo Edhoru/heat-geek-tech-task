@@ -9,7 +9,8 @@ import SwiftUI
 
 final class AppetizerListViewModel: ObservableObject {
     
-    @Published var characters = [Character]()
+    @Published var characters: [Character] = []
+    @Published var alertItem: AlertItem?
     
     func fetchCharacters() {
         NetworkManager.shared.fetchCharacters { result in
@@ -17,9 +18,18 @@ final class AppetizerListViewModel: ObservableObject {
                 switch result {
                 case .success(let characters):
                     self.characters = characters
+                    
                 case .failure(let error):
-                    print("DEBUG: Error: \(error)")
-                    return
+                    switch error {
+                    case .invalidURL:
+                        self.alertItem = AlertContext.invalidURL
+                        
+                    case .responseProblem:
+                        self.alertItem = AlertContext.responseProblem
+                        
+                    case .decodingProblem:
+                        self.alertItem = AlertContext.decodingProblem
+                    }
                 }
             }
         }
