@@ -13,4 +13,5 @@ struct ResponseWrapper: Codable {
 
 struct Character: Codable, Hashable {
     let name: String
+    let imageUrl: String?
 }

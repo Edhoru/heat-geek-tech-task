@@ -11,6 +11,7 @@ final class NetworkManager {
     
     // MARK: - Properties
     static let shared = NetworkManager()
+    private let cache = NSCache<NSString, UIImage>()
     
     // MARK: - Private Init to avoid multiple instances
     private init() { }
@@ -41,5 +42,32 @@ final class NetworkManager {
             }
             dataTask.resume()
         }
+    }
+    
+    func downloadImage(fromURLString urlString: String, completed: @escaping (UIImage?) -> Void) {
+        
+        let cacheKey = NSString(string: urlString)
+        
+        if let image = cache.object(forKey: cacheKey) {
+            completed(image)
+            return
+        }
+        
+        guard let url = URL(string: urlString) else {
+            completed(nil)
+            return
+        }
+        
+        let dataTask = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response , _ in
+            
+            guard let data = data, let image = UIImage(data: data) else {
+                completed(nil)
+                return
+            }
+            
+            self.cache.setObject(image, forKey: cacheKey)
+            completed(image)
+        }
+        dataTask.resume()
     }
 }

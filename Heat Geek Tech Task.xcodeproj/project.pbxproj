@@ -10,6 +10,7 @@
 		515341262BE3813600BF7FC9 /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515341252BE3813600BF7FC9 /* CharacterListViewModel.swift */; };
 		515341312BE386A700BF7FC9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515341302BE386A700BF7FC9 /* Alert.swift */; };
 		515341332BE3890500BF7FC9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515341322BE3890500BF7FC9 /* LoadingView.swift */; };
+		515341352BE38DC500BF7FC9 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515341342BE38DC500BF7FC9 /* RemoteImage.swift */; };
 		51CB799F2BE25CC900BE0B36 /* Heat_Geek_Tech_TaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB799E2BE25CC900BE0B36 /* Heat_Geek_Tech_TaskApp.swift */; };
 		51CB79A12BE25CC900BE0B36 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB79A02BE25CC900BE0B36 /* CharacterListView.swift */; };
 		51CB79A32BE25CCB00BE0B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51CB79A22BE25CCB00BE0B36 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		515341252BE3813600BF7FC9 /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
 		515341302BE386A700BF7FC9 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		515341322BE3890500BF7FC9 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		515341342BE38DC500BF7FC9 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		51CB799B2BE25CC900BE0B36 /* Heat Geek Tech Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heat Geek Tech Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CB799E2BE25CC900BE0B36 /* Heat_Geek_Tech_TaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heat_Geek_Tech_TaskApp.swift; sourceTree = "<group>"; };
 		51CB79A02BE25CC900BE0B36 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		5153412E2BE3869D00BF7FC9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				51D8AF362BE261130053FBFF /* Managers */,
 				5153412F2BE386A200BF7FC9 /* Alerts */,
 			);
 			path = Utilities;
@@ -113,6 +116,31 @@
 				51D8AF342BE260E20053FBFF /* APIError.swift */,
 			);
 			path = Alerts;
+			sourceTree = "<group>";
+		};
+		515341362BE38DD500BF7FC9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5153413A2BE3925100BF7FC9 /* Image */,
+				515341392BE3923F00BF7FC9 /* UIKit Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		515341392BE3923F00BF7FC9 /* UIKit Components */ = {
+			isa = PBXGroup;
+			children = (
+				515341322BE3890500BF7FC9 /* LoadingView.swift */,
+			);
+			path = "UIKit Components";
+			sourceTree = "<group>";
+		};
+		5153413A2BE3925100BF7FC9 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				515341342BE38DC500BF7FC9 /* RemoteImage.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		51CB79922BE25CC800BE0B36 = {
@@ -137,14 +165,12 @@
 		51CB799D2BE25CC900BE0B36 /* Heat Geek Tech Task */ = {
 			isa = PBXGroup;
 			children = (
+				515341362BE38DD500BF7FC9 /* Views */,
 				5153412E2BE3869D00BF7FC9 /* Utilities */,
-				51D8AF3E2BE26BE60053FBFF /* Support */,
 				51D8AF372BE261210053FBFF /* Model */,
-				51D8AF362BE261130053FBFF /* Networking */,
 				51D8AF482BE3809E0053FBFF /* Screens */,
 				51CB79A22BE25CCB00BE0B36 /* Assets.xcassets */,
 				51CB799E2BE25CC900BE0B36 /* Heat_Geek_Tech_TaskApp.swift */,
-				515341322BE3890500BF7FC9 /* LoadingView.swift */,
 				51CB79A42BE25CCB00BE0B36 /* Preview Content */,
 			);
 			path = "Heat Geek Tech Task";
@@ -166,12 +192,12 @@
 			path = "Heat Geek Tech TaskTests";
 			sourceTree = "<group>";
 		};
-		51D8AF362BE261130053FBFF /* Networking */ = {
+		51D8AF362BE261130053FBFF /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				51D8AF322BE260710053FBFF /* NetworkManager.swift */,
 			);
-			path = Networking;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		51D8AF372BE261210053FBFF /* Model */ = {
@@ -180,13 +206,6 @@
 				51D8AF302BE2602A0053FBFF /* Character.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		51D8AF3E2BE26BE60053FBFF /* Support */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Support;
 			sourceTree = "<group>";
 		};
 		51D8AF482BE3809E0053FBFF /* Screens */ = {
@@ -331,6 +350,7 @@
 				51D8AF332BE260710053FBFF /* NetworkManager.swift in Sources */,
 				51D8AF312BE2602A0053FBFF /* Character.swift in Sources */,
 				51CB79A12BE25CC900BE0B36 /* CharacterListView.swift in Sources */,
+				515341352BE38DC500BF7FC9 /* RemoteImage.swift in Sources */,
 				515341262BE3813600BF7FC9 /* CharacterListViewModel.swift in Sources */,
 				51D8AF3C2BE26BD70053FBFF /* CharacterDetailView.swift in Sources */,
 				51D8AF352BE260E20053FBFF /* APIError.swift in Sources */,

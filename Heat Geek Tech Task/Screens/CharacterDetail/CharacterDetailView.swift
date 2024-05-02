@@ -15,10 +15,15 @@ struct CharacterDetailView: View {
             Text(character.name)
                 .font(.largeTitle)
                 .padding()
+            
+            HGRemoteImage(urlString: character.imageUrl ?? "")
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 500)
+                .cornerRadius(8)
         }
     }
 }
 
 #Preview {
-    CharacterDetailView(character: Character(name: "Test"))
+    CharacterDetailView(character: Character(name: "Test", imageUrl: ""))
 }
