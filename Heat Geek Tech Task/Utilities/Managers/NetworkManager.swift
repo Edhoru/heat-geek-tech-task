@@ -17,57 +17,28 @@ final class NetworkManager {
     private init() { }
     
     // MARK: Public Interface
-    func fetchCharacters(completion: @escaping(Result<[Character], APIError>) -> Void) {
-        do {
+    func fetchCharacters() async throws -> [Character] {
             var urlRequest = URLRequest(url: URL(string: "https://api.disneyapi.dev/character")!)
             urlRequest.httpMethod = "GET"
             
-            let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response , _ in
-                
-                guard let httpResponse = response as? HTTPURLResponse,
-                      (200..<300).contains(httpResponse.statusCode),
-                      let jsonData = data else {
-                    completion(.failure(.responseProblem))
-                    return
-                }
-                
-                do {
-                    let decoder = JSONDecoder()
-                    let decodedData = try decoder.decode(ResponseWrapper.self, from: jsonData)
-                    completion(.success(decodedData.data))
-                } catch {
-                    print("Decoding error: \(error)")
-                    completion(.failure(.decodingProblem))
-                }
+            let (data, response) = try await URLSession.shared.data(for: urlRequest)
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  (200..<300).contains(httpResponse.statusCode) else {
+                throw APIError.responseProblem
             }
-            dataTask.resume()
+            
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(dateFormatter())
+            let decodedData = try decoder.decode(ResponseWrapper.self, from: data)
+            return decodedData.data
         }
-    }
     
-    func downloadImage(fromURLString urlString: String, completed: @escaping (UIImage?) -> Void) {
-        
-        let cacheKey = NSString(string: urlString)
-        
-        if let image = cache.object(forKey: cacheKey) {
-            completed(image)
-            return
+    private func dateFormatter() -> DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+            formatter.timeZone = TimeZone(secondsFromGMT: 0)
+            formatter.locale = Locale(identifier: "en_US_POSIX")
+            return formatter
         }
-        
-        guard let url = URL(string: urlString) else {
-            completed(nil)
-            return
-        }
-        
-        let dataTask = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response , _ in
-            
-            guard let data = data, let image = UIImage(data: data) else {
-                completed(nil)
-                return
-            }
-            
-            self.cache.setObject(image, forKey: cacheKey)
-            completed(image)
-        }
-        dataTask.resume()
-    }
 }

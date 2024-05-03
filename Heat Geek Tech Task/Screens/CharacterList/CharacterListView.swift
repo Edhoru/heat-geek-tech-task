@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharacterListView: View {
     
-    @StateObject var viewModel = AppetizerListViewModel()
+    @StateObject var viewModel = CharacterListViewModel()
     
     var body: some View {
         ZStack {
@@ -17,15 +17,19 @@ struct CharacterListView: View {
                 List(viewModel.characters, id: \.self) { character in
                     HGListCell(character: character)
                         .onTapGesture {
-                            viewModel.selectedCharacter = character
-                            viewModel.isShowingDetail = true
+                            withAnimation {
+                                viewModel.selectedCharacter = character
+                                viewModel.isShowingDetail = true
+                            }
                         }
                 }
                 .navigationTitle("Characters")
                 .disabled(viewModel.isShowingDetail)
             }
             .onAppear {
-                viewModel.fetchCharacters()
+                Task {
+                    await viewModel.fetchCharacters()
+                }
             }
             .blur(radius: viewModel.isShowingDetail ? 20 : 0)
             
@@ -48,4 +52,13 @@ struct CharacterListView: View {
 
 #Preview {
     CharacterListView()
+}
+
+struct CharacterView: View {
+    let character: Character
+    
+    var body: some View {
+        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
+    }
+    
 }

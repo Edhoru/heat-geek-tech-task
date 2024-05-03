@@ -16,10 +16,22 @@ struct CharacterDetailView: View {
         VStack {
             Text(character.name)
                 .padding(.vertical, 20)
-            
-            HGRemoteImage(urlString: character.imageUrl ?? "")
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 300, height: 225)
+            AsyncImage(url: character.processedImageURL) { phase in
+                switch phase {
+                case .success(let image):
+                    image
+                        .detailImageModifier()
+                case .failure(_):
+                    Image(systemName: "camera.metering.unknown")
+                        .detailImageModifier()
+                case .empty:
+                    ProgressView() // Displays a spinner while the image is loading
+                        .frame(width: 300, height: 225)
+                @unknown default:
+                    Image(systemName: "photo")
+                        .detailImageModifier()
+                }
+            }
             
             Spacer()
             
@@ -42,6 +54,15 @@ struct CharacterDetailView: View {
     }
 }
 
+extension Image {
+    func detailImageModifier() -> some View {
+        self
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 300, height: 225)
+    }
+}
+
 #Preview {
-    CharacterDetailView(character: Character(name: "Test", imageUrl: "https://static.wikia.nocookie.net/disney/images/d/d3/Vlcsnap-2015-05-06-23h04m15s601.png"), isShowingDetail: .constant(true))
+    CharacterDetailView(character: Character.testCharacter()	, isShowingDetail: .constant(true))
 }
